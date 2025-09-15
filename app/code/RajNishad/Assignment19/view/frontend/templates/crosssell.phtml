@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Copyright 2024 Adobe
+ * All Rights Reserved.
+ */
+
+/** @var \RajNishad\Assignment19\Block\Template $block */
+?>
+
+<?php if (!empty($crosssellProducts)): ?>
+    <div class="minicart-crosssell">
+        <h4><?php echo __('You may also like') ?></h4>
+        <ul class="crosssell-items">
+            <?php foreach ($crosssellProducts as $product): ?>
+                <li>
+                    <a href="<?= $product->getProductUrl() ?>">
+                        <img src="<?= $block->getImage($product, 'product_thumbnail_image')->getImageUrl() ?>"
+                            alt="<?= $block->escapeHtml($product->getName()) ?>" />
+                        <span><?= $block->escapeHtml($product->getName()) ?></span>
+                    </a>
+                    <span class="price"><?= $block->escapeHtml($block->getCurrency()->format($product->getFinalPrice(), [], false)) ?></span>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
