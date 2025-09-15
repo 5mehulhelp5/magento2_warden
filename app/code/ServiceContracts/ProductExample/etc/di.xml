@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="productexample:get" xsi:type="object">ServiceContracts\ProductExample\Console\GetProductCommand</item>
+                <item name="productexample:create" xsi:type="object">ServiceContracts\ProductExample\Console\CreateProductCommand</item>
+                <item name="productexample:update" xsi:type="object">ServiceContracts\ProductExample\Console\UpdateProductCommand</item>
+                <item name="productexample:delete" xsi:type="object">ServiceContracts\ProductExample\Console\DeleteProductCommand</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>

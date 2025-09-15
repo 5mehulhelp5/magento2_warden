@@ -1,0 +1,7 @@
+Invalid Document 
+Element 'type', attribute 'name': [facet 'pattern'] The value 'Course2Link24\ReplaceConstructorArguments\ViewModel\Example.php' is not accepted by the pattern '(\\?[a-zA-Z_-ÿ][a-zA-Z0-9_-ÿ]*)(\\[a-zA-Z_-ÿ][a-zA-Z0-9_-ÿ]*)*'.
+Line: 4
+
+Element 'type', attribute 'name': Warning: No precomputed value available, the value was either invalid or something strange happened.
+Line: 4
+

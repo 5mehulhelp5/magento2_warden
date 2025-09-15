@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Map data interface to model -->
+    <preference for="ServiceContracts\EmployeesExample\Api\Data\EmployeeInterface"
+                type="ServiceContracts\EmployeesExample\Model\Employee" />
+
+    <!-- Map repository interface to implementation -->
+    <preference for="ServiceContracts\EmployeesExample\Api\EmployeeRepositoryInterface"
+                type="ServiceContracts\EmployeesExample\Model\EmployeeRepository" />
+
+    <!-- Register console commands -->
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="employee_create" xsi:type="object">ServiceContracts\EmployeesExample\Console\CreateEmployeeCommand</item>
+                <item name="employee_get" xsi:type="object">ServiceContracts\EmployeesExample\Console\GetEmployeeCommand</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>

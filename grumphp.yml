@@ -1,0 +1,66 @@
+grumphp:
+  process_timeout: 480
+  tasks:
+    phpcs:
+      standard:
+        - dev/tests/static/framework/Magento/ruleset.xml
+      exclude:
+        - Magento2.Legacy.InstallUpgrade
+      ignore_patterns:
+        - /^vendor\//
+        - /^generated\//
+        - /^pub\//
+        - /^app\/bootstrap\.php$/
+        - /^app\/autoload\.php$/
+        - /^app\/etc\//
+        - /^app\/code\/Course2.*/
+        - /^app\/code\/DependencyInjection/
+        - /^app\/code\/ACL/
+        - /^app\/code\/ServiceContracts/
+        - /^app\/code\/Proxy/
+        - /^app\/design\/frontend\/Course2.*/
+        - /^app\/design\/adminhtml\/Course2.*/
+        - /^phpserver\//
+        - /^bin\//
+        - /^var\//
+        - /^dev\//
+        - /^setup\//
+        - /^lib\//
+        - /\.js$/
+        - /\.css$/
+        - /\.less$/
+        - /\.scss$/
+        - app/autoload.php
+        - app/etc/NonComposerComponentRegistration.php
+        - app/etc/registration_globlist.php
+        - app/etc/vendor_path.php
+      triggered_by:
+        - php
+    phpspec:
+      format: progress
+      verbose: true
+    composer:
+      no_check_lock: true
+    yamllint:
+      parse_custom_tags: true
+      ignore_patterns:
+        - "#test/(.*).yml#"
+    paratest:
+      testsuite: E2E
+      verbose: true
+      functional: true
+  testsuites:
+    git_pre_commit:
+      tasks: [phpcs, composer, yamllint]
+    # On CI, we run paratest separately. For some reason this currently fails in GitHub actions.
+    ci:
+      tasks: []
+    # Don't run psalm on Windows for now. There is a known issue with the Windows phar:
+    # https://github.com/vimeo/psalm/issues/2858
+    windows:
+      tasks: []
+  environment:
+    variables:
+      BOX_REQUIREMENT_CHECKER: 0
+    paths:
+      - tools

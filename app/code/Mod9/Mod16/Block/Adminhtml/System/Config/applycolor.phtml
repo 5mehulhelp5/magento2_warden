@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Copyright 2024 Adobe
+ * All Rights Reserved.
+ */
+
+$buttonId = 'apply_color_button';
+$ajaxUrl = $block->getUrl('mod16/system_config/apply');
+?>
+<button id="<?= $buttonId ?>" type="button" class="scalable action-default">
+    <span>Apply Color</span>
+</button>
+
+<script>
+    require(['jquery'], function($) {
+        $('#<?= $buttonId ?>').on('click', function() {
+            $.ajax({
+                url: '<?= $ajaxUrl ?>',
+                type: 'POST',
+                data: {},
+                success: function(response) {
+                    alert('Color Applied Successfully!');
+                }
+            });
+        });
+    });
+</script>

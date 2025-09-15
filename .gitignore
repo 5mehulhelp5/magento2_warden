@@ -1,0 +1,50 @@
+# =========================================
+# Magento 2 Gitignore
+# =========================================
+
+# IDE / OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Composer & vendor
+/vendor/
+/composer.lock
+
+# Magento generated files
+/generated/
+/pub/static/
+/var/
+/app/etc/config.php
+/app/etc/env.php
+
+# Media & cache
+/pub/media/catalog/product/cache/
+/pub/media/tmp/
+/pub/media/wysiwyg/tmp/
+
+# Logs
+*.log
+
+# PHPUnit / test cache
+.phpunit.result.cache
+
+# Node / frontend dependencies
+/node_modules/
+/npm-debug.log
+/yarn-error.log
+
+# Coverage reports
+/coverage/
+/build/
+/reports/
+
+# GrumPHP cache
+/.php_cs.cache
+/.php-cs-fixer.cache
+
+# Docker / local env
+/.docker/
+/docker-compose.override.yml
+/.env

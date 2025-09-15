@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <dataSource name="customsales_order_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Sales\Ui\Component\DataProvider</argument>
+            <argument name="name" xsi:type="string">customsales_order_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="collection" xsi:type="string">Magento\Sales\Model\ResourceModel\Order\Grid\Collection</argument>
+        </argument>
+    </dataSource>
+
+    <columns name="customsales_order_columns">
+        <column name="entity_id">
+            <settings>
+                <label>Order ID</label>
+            </settings>
+        </column>
+        <column name="customer_firstname">
+            <settings>
+                <label>Customer First Name</label>
+            </settings>
+        </column>
+        <column name="customer_lastname">
+            <settings>
+                <label>Customer Last Name</label>
+            </settings>
+        </column>
+        <column name="created_at">
+            <settings>
+                <label>Created At</label>
+            </settings>
+        </column>
+        <column name="grand_total">
+            <settings>
+                <label>Grand Total</label>
+            </settings>
+        </column>
+    </columns>
+
+    <settings>
+        <spinner>customsales_order_columns</spinner>
+        <buttons>
+            <button name="export_button" class="Magento\Ui\Component\ExportButton"/>
+        </buttons>
+    </settings>
+</listing>
