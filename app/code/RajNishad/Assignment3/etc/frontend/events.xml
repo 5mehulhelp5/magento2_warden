@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework/Event/etc/events.xsd">
+
+    <event name="catalog_controller_product_view">
+        <observer name="raj_product_view_logger" instance="RajNishad\Assignment3\Observer\ProductViewLogger"/>
+    </event>
+
+    <event name="controller_action_postdispatch">
+        <observer name="raj_html_logger" instance="RajNishad\Assignment3\Observer\HtmlLogger"/>
+    </event>
+
+    <!-- Contact Us page -->
+    <event name="controller_action_predispatch">
+        <observer name="raj_contact_view_logger" instance="RajNishad\Assignment3\Observer\ContactViewLogger"/>
+    </event>
+
+</config>

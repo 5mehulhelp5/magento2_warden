@@ -1,0 +1,21 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$collection = $objectManager->create(\RajNishad\Assignment8\Model\ResourceModel\Employee\Collection::class);
+?>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </tr>
+    <?php foreach ($collection as $employee): ?>
+        <tr>
+            <td><?= $employee->getId() ?></td>
+            <td><?= $employee->getFirstName() ?></td>
+            <td><?= $employee->getLastName() ?></td>
+            <td><?= $employee->getEmailId() ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>

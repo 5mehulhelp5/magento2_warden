@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="raj_product_name_plugin" type="RajNishad\Assignment2\Plugin\ProductNamePlugin"/>
+    </type>
+    <type name="Magento\Theme\Block\Html\Footer">
+        <plugin name="raj_copyright_plugin" type="RajNishad\Assignment2\Plugin\CopyrightPlugin"/>
+    </type>
+    <type name="Magento\Theme\Block\Html\Header">
+        <plugin name="raj_welcome_plugin" type="RajNishad\Assignment2\Plugin\WelcomeMessagePlugin"/>
+    </type>
+    <type name="Magento\Theme\Block\Html\Breadcrumbs">
+        <plugin name="raj_breadcrumb_plugin" type="RajNishad\Assignment2\Plugin\BreadcrumbPlugin"/>
+    </type>
+</config>

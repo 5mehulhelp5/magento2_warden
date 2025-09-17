@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!-- triggered just before the FrontController starts dispatching the request.  -->
+    <event name="controller_front_init_before"> 
+        <observer name="raj_log_routers" instance="RajNishad\Assignment4\Observer\LogRouters"/>
+    </event>
+
+    <event name="controller_action_predispatch_cms_noroute_index">
+        <observer name="raj_redirect_404" instance="RajNishad\Assignment4\Observer\RedirectNotFound"/>
+    </event>
+</config>

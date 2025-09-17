@@ -1,0 +1,25 @@
+<?php
+
+use MageMastery\Popup\ViewModel\PopupViewModel;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+/** @var PopupViewModel $viewModel */
+
+$viewModel = $block->getData('view_model');
+
+$popup = $viewModel->getActivePopup();
+?>
+
+<button type="button" class="action" data-trigger="trigger">
+
+    <span data-bind="i18n: 'Click Here'"></span>
+
+</button>
+
+<div data-bind="mageInit: {
+        'MageMastery/js/popup':{
+            'timeout': <?= /* @noEscape */ $popup->getTimeout(); ?>,
+            'content': '<?= $popup->getContent(); ?>',
+        }}">
+</div>

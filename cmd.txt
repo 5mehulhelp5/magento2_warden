@@ -1,3 +1,5 @@
 sudo chown -R www-data:www-data /var/www/html/magento2
 
 vendor/bin/grumphp run
+
+code '/home/rajnishad/Documents/magento-backend'
