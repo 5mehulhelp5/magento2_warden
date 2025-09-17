@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Copyright 2024 Adobe
+ * All Rights Reserved.
+ */
+
+/** @var $block \RajNishad\Assignment24\Block\Config */ ?>
+<script type="text/x-magento-init">
+    {
+    "*": {
+        "RajNishad_Assignment24/js/config-logger": {
+            "configData": <?= /* safely encode as JSON */ json_encode($block->getConfigData()); ?>
+        }
+    }
+}
+</script>
