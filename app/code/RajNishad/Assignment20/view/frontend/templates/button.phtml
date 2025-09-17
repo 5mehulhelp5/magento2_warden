@@ -1,0 +1,27 @@
+<?php
+
+/** @var $currentBlock \Magento\Framework\View\Element\Template */
+$currentBlock = $block;
+$product = $currentBlock->getProduct();
+
+// Fallback to parent block
+if (!$product && $currentBlock->getParentBlock() && method_exists($currentBlock->getParentBlock(), 'getProduct')) {
+    $product = $currentBlock->getParentBlock()->getProduct();
+}
+
+if (!$product) return;
+
+// Create instance of our custom block for method
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customBlock = $objectManager->create(\RajNishad\Assignment20\Block\Button::class);
+
+if ($customBlock->shouldShowCallButton($product)): ?>
+    <a href="<?= $customBlock->getContactUrl() ?>" class="action primary">
+        <?= __('Call For Availability') ?>
+    </a>
+<?php else: ?>
+    <?= $currentBlock->getLayout()
+        ->createBlock(\Magento\Catalog\Block\Product\View::class)
+        ->setTemplate('Magento_Catalog::product/view/addtocart.phtml')
+        ->toHtml(); ?>
+<?php endif; ?>
