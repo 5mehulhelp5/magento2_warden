@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="catalog.leftnav">
+            <arguments>
+                <argument name="template" xsi:type="string">Magento_LayeredNavigation::layer/view.phtml</argument>
+                <argument name="filter_templates" xsi:type="array">
+                    <item name="rating" xsi:type="string">RajNishad_RatingFilter/layer/filter/rating.phtml</item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

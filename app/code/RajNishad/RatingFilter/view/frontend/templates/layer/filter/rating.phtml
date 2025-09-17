@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @var \RajNishad\RatingFilter\Model\Layer\Filter\Rating $filter
+ */
+?>
+
+<ol class="items">
+    <?php foreach ($filter->getItems() as $filterItem): ?>
+        <li class="item">
+            <a href="<?= $block->escapeUrl($filterItem->getUrl()) ?>">
+                <span class="label">
+                    <?php /* @noEscape */ echo $filterItem->getLabel() ?>
+                </span>
+                <?php if ($this->helper(\Magento\Catalog\Helper\Data::class)->shouldDisplayProductCountOnLayer()): ?>
+                    <span class="count"><?= /* @noEscape */ $filterItem->getCount() ?><span class="filter-count-label">
+                            <?php $filterItem->getCount() == 1 ? __('item') : __('items') ?></span></span>
+                <?php endif; ?>
+            </a>
+        </li>
+    <?php endforeach ?>
+</ol>
