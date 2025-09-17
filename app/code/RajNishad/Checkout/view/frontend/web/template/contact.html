@@ -1,0 +1,29 @@
+<li id="contact-step" data-bind="fadeVisible: isVisible">
+    <div
+        class="step-title"
+        data-bind="i18n: 'Contact Information'"
+        data-role="title"
+    ></div>
+    <div
+        id="checkout-step-content-contact"
+        class="step-content"
+        data-role="content"
+    >
+        <form class="form" data-bind="submit: navigateToNextStep">
+            <div class="fieldset" data-bind="visible: isVisible"></div>
+        </form>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button
+                    data-role="opc-continue"
+                    type="submit"
+                    class="button action continue primary"
+                    data-bind="click: navigateToNextStep"
+                >
+                    <span data-bind="i18n: 'Next'"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</li>
