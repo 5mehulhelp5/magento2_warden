@@ -15,6 +15,7 @@ grumphp:
         - /^app\/etc\//
         - /^app\/code\/Course2.*/
         - /^app\/code\/DependencyInjection/
+        - /^app\/code\/MagicToolbox/
         - /^app\/code\/MageMastery/
         - /^app\/code\/ACL/
         - /^app\/code\/ServiceContracts/
