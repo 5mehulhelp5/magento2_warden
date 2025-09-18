@@ -1,0 +1,127 @@
+<?php
+
+/** @var $block \ControllerBlockLayoutTemplate\Example\Block\ExampleBlock */
+$employees = $block->getEmployees();
+$navbar = $block->getNavbarLinks();
+$sidebar = $block->getSidebarLinks();
+$footer = $block->getFooterText();
+?>
+
+<style>
+    .example-container {
+        display: grid;
+        grid-template-areas:
+            "navbar navbar"
+            "sidebar main"
+            "footer footer";
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 60px auto 40px;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        grid-area: navbar;
+        background: #2c3e50;
+        color: #ecf0f1;
+        padding: 10px;
+    }
+
+    .navbar a {
+        color: #ecf0f1;
+        margin-right: 15px;
+        text-decoration: none;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        background: #ecf0f1;
+        padding: 15px;
+        border-right: 1px solid #bdc3c7;
+    }
+
+    .main {
+        grid-area: main;
+        padding: 20px;
+    }
+
+    .footer {
+        grid-area: footer;
+        background: #34495e;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid #7f8c8d;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="example-container">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <?php foreach ($navbar as $link): ?>
+            <a href="<?= $link['url'] ?>"><?= $link['label'] ?></a>
+        <?php endforeach; ?>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Sidebar Menu</h3>
+        <ul>
+            <?php foreach ($sidebar as $item): ?>
+                <li><?= $item ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Employee Directory</h1>
+        <p>This is an example Magento 2 module that shows how controllers, blocks, layouts, and templates work together to build a full page.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($employees as $emp): ?>
+                    <tr>
+                        <td><?= $emp['id'] ?></td>
+                        <td><?= $emp['name'] ?></td>
+                        <td><?= $emp['role'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <?= $footer ?>
+    </div>
+</div>
