@@ -15,7 +15,9 @@ grumphp:
         - /^app\/etc\//
         - /^app\/code\/Course2.*/
         - /^app\/code\/DependencyInjection/
+        - /^app\/code\/MagentoBackendProjects/
         - /^app\/code\/ControllerBlockLayoutTemplate/
+        - /^app\/code\/AccessControlList/
         - /^app\/code\/MagicToolbox/
         - /^app\/code\/MageMastery/
         - /^app\/code\/ACL/

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="AccessControlList_Example::parent" title="ACL Example Menu" module="AccessControlList_Example" sortOrder="50" resource="AccessControlList_Example::parent"/>
+
+        <add id="AccessControlList_Example::view_demo" title="View Demo" module="AccessControlList_Example" sortOrder="10" parent="AccessControlList_Example::parent" action="acl_example/demo/index" resource="AccessControlList_Example::view"/>
+    </menu>
+</config>

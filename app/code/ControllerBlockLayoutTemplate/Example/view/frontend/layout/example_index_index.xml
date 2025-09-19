@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!-- <head>
+    <css src="ControllerBlockLayoutTemplate_Example::css/custom.css"/>
+    <script src="ControllerBlockLayoutTemplate_Example::js/custom.js"/>
+     <title>My Example Page</title>
+</head> -->
     <body>
         <!-- Main content block -->
         <referenceContainer name="content">
@@ -7,3 +12,69 @@
         </referenceContainer>
     </body>
 </page>
+
+
+
+<!-- <page> → root
+
+<head> → title, css, script, link, remove
+
+<body>
+
+<referenceContainer>
+
+<container>
+
+<block>
+
+<referenceBlock>
+
+<move>
+
+<remove>
+
+<update>
+
+<arguments> / <argument>
+
+<action> (legacy, optional) -->
+
+
+<!-- 
+<block class="Magento\Framework\View\Element\Template" name="custom.block">
+    <arguments>
+        <argument name="title" xsi:type="string">Custom Title</argument>
+        <argument name="items" xsi:type="array">
+            <item name="one" xsi:type="string">First</item>
+            <item name="two" xsi:type="string">Second</item>
+        </argument>
+    </arguments>
+</block> 
+-->
+
+
+<!-- <update handle="cms_index_index"/> -->
+
+<!-- <remove name="page.footer"/> -->
+
+<!-- <move element="example.block" destination="sidebar.main"/> -->
+
+
+<!--
+<container name="example.container" as="example_container" label="Example Container" htmlTag="div" htmlClass="example-wrapper"/>
+-->
+
+
+
+<!-- 
+<referenceContainer name="content">
+    <block class="Magento\Framework\View\Element\Template" name="example.navbar" template="ControllerBlockLayoutTemplate_Example::navbar.phtml"/>
+
+    <block class="Magento\Framework\View\Element\Template" name="example.sidebar" template="ControllerBlockLayoutTemplate_Example::sidebar.phtml"/>
+    <block class="ControllerBlockLayoutTemplate\Example\Block\TableBlock" name="example.table" template="ControllerBlockLayoutTemplate_Example::table.phtml"/>
+</referenceContainer>
+
+<referenceContainer name="footer-container">
+    <block class="Magento\Framework\View\Element\Template" name="example.footer" template="ControllerBlockLayoutTemplate_Example::footer.phtml"/>
+</referenceContainer> 
+-->
