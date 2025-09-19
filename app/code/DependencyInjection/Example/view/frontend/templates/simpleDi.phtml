@@ -1,0 +1,8 @@
+<?php
+
+/** @var \DependencyInjection\Example\Block\Template $block */
+?>
+
+<p>sample DI : <?= $block->getMain()->injectable->dependencyCode() ?></p>
+
+<p>arguments : <?= $block->getMain()->getArr()['0'], $block->getMain()->getArr()['1'], $block->getMain()->getArr()['2'] ?></p>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="MagentoBackendProjects_SalesExtension::orders" title="Trainee Name Custom Sales Orders" module="MagentoBackendProjects_SalesExtension" sortOrder="90" parent="Magento_Sales::sales" action="customsalesorders/order/index" resource="Trainee_CustomSalesOrders::orders"/>
+        <add id="MagentoBackendProjects_SalesExtension::orders" title="Trainee Name Custom Sales Orders" module="MagentoBackendProjects_SalesExtension" sortOrder="90" parent="Magento_Sales::sales" action="salesextension/order/index" resource="MagentoBackendProjects_SalesExtension::orders"/>
         <!-- id is must, Convention: <ModuleName>::<permission_id>.Must match a resource ID defined in etc/acl.xml (for permissions).-->
         <!-- title , the name that appears on sidebar-->
         <!-- module, tells magento where this menu item belongs or helps magento know which module registered the menu-->

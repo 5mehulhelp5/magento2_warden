@@ -9,5 +9,13 @@ namespace RajNishad\Assignment1\Model;
 
 class Category extends \Magento\Catalog\Model\Category
 {
-    //empty function.
+    /**
+     * Get Data
+     *
+     * @return string
+     */
+    public function getDataTemp(): string
+    {
+        return "This is Category Model Data";
+    }
 }

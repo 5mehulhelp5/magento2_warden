@@ -19,7 +19,7 @@ class Test
     /**
      * @var array
      */
-    private $dataArray;
+    public $dataArray;
 
     /**
      * @var string
@@ -27,7 +27,7 @@ class Test
     private $stringParam;
 
     /**
-     * Constructor
+     * Constructor , the parameters will be passed from di.xml file
      *
      * @param CategoryInterface $category
      * @param array $dataArray
@@ -56,7 +56,8 @@ class Test
         }
         $arrayContent .= "</ul>";
 
-        $ans = "<h3>String Parameter:</h3>\n<p>" . $this->stringParam . "</p>\n"
+        $temp = $this->category->getDataTemp();
+        $ans = $temp . "\n" . "<h3>String Parameter:</h3>\n<p>" . $this->stringParam . "</p>\n"
             . "<h3>Array Parameter:</h3>\n" . $arrayContent;
 
         return $ans;

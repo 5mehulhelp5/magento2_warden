@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="DependencyInjection\Example\Model\DependencyInjectableInterface" type="DependencyInjection\Example\Model\DependencyInjectable"></preference>
+    <type name="DependencyInjection\Example\Model\Main">
+        <arguments>
+            <argument name="arr" xsi:type="array">
+                <item name="0" xsi:type="string">ewidfj2f9rj2j2</item>
+                <item name="1" xsi:type="string">ewidfj2f9rj2j2</item>
+                <item name="2" xsi:type="string">ewidfj2f9rj2j2</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
+
+
+<!-- 1️⃣ Root element
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    ...
+</config>
+
+
+Everything in di.xml goes inside <config>.
+
+2️⃣ Top-level elements
+
+<type> → Configure a class.
+
+<virtualType> → Configure a virtual type (like a class alias with some predefined arguments).
+
+<preference> → Map an interface to a concrete class.
+
+<plugin> → Define interceptors for a class (before/after/around methods).
+
+<argument> → Pass a constructor argument to a class (inside <type> or <virtualType>).
+
+<preference for="" type=""/> → Used to define a preference inline.
+
+<preference> (old style alternative) → maps interface to implementation.
+
+<preference> is basically <preference for="Interface" type="ConcreteClass"/>.
+
+<preference> can exist at global, module, or area level.
+
+3️⃣ Inside <type> or <virtualType>
+<type name="Vendor\Module\Model\MyClass">
+    <arguments>
+        <argument name="paramName" xsi:type="string">value</argument>
+        <argument name="arrayParam" xsi:type="array">
+            <item name="key" xsi:type="string">value</item>
+        </argument>
+        <argument name="objectParam" xsi:type="object">Vendor\Module\Model\OtherClass</argument>
+        <argument name="constParam" xsi:type="const">Magento\Framework\App\State::AREA_FRONTEND</argument>
+        <argument name="booleanParam" xsi:type="boolean">true</argument>
+        <argument name="numberParam" xsi:type="number">123</argument>
+    </arguments>
+</type>
+
+4️⃣ xsi:type values
+xsi:type	Description
+string	Simple string value
+number	Integer/float
+boolean	true/false
+array	Array, can have <item> children
+object	Class reference (DI injects an instance)
+const	PHP constant
+null	Null value
+5️⃣ Inside <array>
+<argument name="myArray" xsi:type="array">
+    <item name="first" xsi:type="string">value1</item>
+    <item name="second" xsi:type="object">Vendor\Module\Model\OtherClass</item>
+</argument>
+
+
+<item> must have a name and xsi:type.
+
+6️⃣ Plugins
+<type name="Magento\Catalog\Model\Product">
+    <plugin name="my_plugin" type="Vendor\Module\Plugin\ProductPlugin" sortOrder="10" disabled="false"/>
+</type>
+
+
+Attributes of <plugin>:
+
+name → unique plugin name
+
+type → plugin class
+
+sortOrder → determines order of execution
+
+disabled → true/false
+
+7️⃣ Virtual Types
+<virtualType name="Vendor\Module\Model\CustomCollection" type="Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection">
+    <arguments>
+        <argument name="model" xsi:type="object">Vendor\Module\Model\MyModel</argument>
+        <argument name="resourceModel" xsi:type="object">Vendor\Module\Model\ResourceModel\MyModel</argument>
+    </arguments>
+</virtualType>
+
+
+Allows creating a new “class” without writing a PHP class.
+
+8️⃣ Preferences
+<preference for="Magento\Catalog\Api\ProductRepositoryInterface" type="Vendor\Module\Model\ProductRepository"/>
+
+
+Maps an interface (for) to a concrete class (type).
+
+9️⃣ Other optional elements
+
+<virtualType> can have <arguments> same as <type>.
+
+<type> can have multiple <arguments> and multiple <plugin> elements.
+
+<shared> → controls whether a class is singleton (true) or prototype (false):
+
+<type name="Vendor\Module\Model\MyClass" shared="false">
+
+
+<preferences> → can be defined per module or globally.
+
+<arguments> can also nest arrays and objects. -->
