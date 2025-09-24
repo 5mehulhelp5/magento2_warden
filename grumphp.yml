@@ -19,6 +19,8 @@ grumphp:
         - /^app\/code\/ControllerBlockLayoutTemplate/
         - /^app\/code\/AccessControlList/
         - /^app\/code\/MagicToolbox/
+        - /^app\/code\/Test/
+        - /^app\/code\/Crontab/
         - /^app\/code\/MageMastery/
         - /^app\/code\/ACL/
         - /^app\/code\/ServiceContracts/

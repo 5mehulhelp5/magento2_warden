@@ -1,9 +1,11 @@
 {
     "folders": [
         {
+            "name": "magento",
             "path": "."
         },
         {
+            "name": "magento",
             "path": "vendor/magento"
         }
     ],

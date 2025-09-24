@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <!-- <referenceContainer name="content">
+            <block class="MagentoBackendProjects\HomepageCmsBlocks\Block\Random" name="MagentoBackendProjects_HomepageCmsBlocks_Random" template="MagentoBackendProjects_HomepageCmsBlocks::random.phtml" />
+        </referenceContainer> -->
+
+        <!-- Remove main content -->
+        <!-- <referenceContainer name="content" remove="true"/> -->
+
+        <!-- Remove sidebars -->
+        <!-- <referenceContainer name="sidebar.main" remove="true"/>
+        <referenceContainer name="sidebar.additional" remove="true"/> -->
+
+        <!-- Remove page header & footer -->
+        <!-- <referenceContainer name="header.container" remove="true"/>
+        <referenceContainer name="footer-container" remove="true"/> -->
+
+        <!-- Remove breadcrumbs -->
+        <!-- <referenceBlock name="breadcrumbs" remove="true"/> -->
+
+        <block class="MagentoBackendProjects\HomepageCmsBlocks\Block\Homepage\CmsBlocks" name="homepage.cms.blocks" template="MagentoBackendProjects_HomepageCmsBlocks::cms_blocks.phtml" before="-"/>
+
+    </body>
+</page>

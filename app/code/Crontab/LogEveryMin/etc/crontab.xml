@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- 
+    This file defines cron jobs for your module.
+    Location: app/code/Vendor/Module/etc/crontab.xml
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+
+    <!-- 
+        A cron group is like a bucket that holds cron jobs.
+        "default" is the most common group for general tasks.
+    -->
+    <group id="default">
+
+        <!-- 
+            Each <job> defines a single cron task.
+            - name: must be unique across all modules
+            - instance: PHP class to call
+            - method: function inside the class to run
+        -->
+        <job name="vendor_module_task" instance="Crontab\LogEveryMin\Cron\Task" method="execute">
+
+            <!-- 
+                Schedule is in standard Linux cron format: 
+                minute hour day month weekday
+                * * * * * → runs every minute, to disable just comment out or remove this line
+            -->
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>
+</config>

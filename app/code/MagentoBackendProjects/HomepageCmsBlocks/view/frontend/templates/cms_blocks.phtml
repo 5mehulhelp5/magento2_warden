@@ -1,0 +1,13 @@
+<?php
+$selectedBlocks = $block->getSelectedBlocks();
+?>
+
+<?php if (!empty($selectedBlocks)): ?>
+    <div class="homepage-cms-blocks">
+        <?php foreach ($selectedBlocks as $identifier): ?>
+            <div class="homepage-cms-block">
+                <?= $block->renderBlock($identifier); ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>

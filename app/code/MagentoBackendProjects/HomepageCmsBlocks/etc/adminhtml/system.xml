@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+
+    <system>
+        <!-- Custom Section -->
+        <section id="homepage_cms_blocks" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Homepage CMS Blocks</label>
+
+            <tab>general</tab>            <!-- This makes it appear under "General" tab -->
+
+            <resource>MagentoBackendProjects_HomepageCmsBlocks::config</resource>
+
+            <group id="settings" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="selected_blocks" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select CMS Blocks</label>
+                    <source_model>MagentoBackendProjects\HomepageCmsBlocks\Model\Config\Source\CmsBlocks</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+
+</config>
+
+
+<!-- 
+
+<config>
+    <system>
+
+
+        <section> → top-level menu (like General, Catalog, Sales)
+            <group>
+                <field/>
+            </group>
+        </section>
+
+
+
+    </system>
+</config>
+
+
+
+
+
+-->

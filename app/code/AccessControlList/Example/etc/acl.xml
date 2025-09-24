@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
     <acl>
         <resources>
-            <resource id="Magento_Backend::admin">                <!--magento_backend -> admin,guest,client,default-->
+            <resource id="Magento_Backend::admin">                <!--<Module_Name>::<Permission_Name>-->
                 <resource id="AccessControlList_Example::parent" title="ACL Example Menu" sortOrder="50">
                     <resource id="AccessControlList_Example::view" title="View Demo Page" sortOrder="10" />
                     <resource id="AccessControlList_Example::save" title="Save/Update Items" sortOrder="20" />
@@ -12,3 +12,60 @@
         </resources>
     </acl>
 </config>
+
+
+<!-- 
+🏠 Backend
+
+Magento_Backend::admin → Root resource (all admin access).
+
+Magento_Backend::content → Content section.
+
+Magento_Backend::stores → Stores configuration.
+
+Magento_Backend::system → System configuration.
+
+📦 Catalog
+
+Magento_Catalog::catalog → Catalog root.
+
+Magento_Catalog::products → Manage Products.
+
+Magento_Catalog::categories → Manage Categories.
+
+Magento_Catalog::attributes_attributes → Product Attributes.
+
+🛒 Sales
+
+Magento_Sales::sales → Sales root.
+
+Magento_Sales::sales_order → Manage Orders.
+
+Magento_Sales::create → Create New Orders.
+
+Magento_Sales::actions_view → View Orders.
+
+👤 Customers
+
+Magento_Customer::customer → Customers root.
+
+Magento_Customer::manage → Manage Customers.
+
+Magento_Customer::groups → Customer Groups.
+
+📈 Reports
+
+Magento_Reports::report → Reports root.
+
+Magento_Reports::salesroot → Sales Reports.
+
+Magento_Reports::customers → Customer Reports.
+
+⚙️ System
+
+Magento_Config::config → Configuration.
+
+Magento_Backup::backup → Backup.
+
+Magento_AdminNotification::system_adminnotification → Notifications.
+-->
