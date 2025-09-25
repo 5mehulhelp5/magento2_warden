@@ -18,12 +18,25 @@ class ProductNamePlugin
      * @param string $result
      * @return string
      */
-    public function afterGetName(Product $subject, $result)
+    public function afterGetName(\Magento\Catalog\Model\Product $subject, $result)
     {
         $price = $subject->getFinalPrice();
-        if ($price < 60) {
-            $result = $result . " On Sale!";
+
+        //assignment 2
+        // if ($price > 60) {
+        //     $result .= "On Sale !!";
+        // }
+
+        //assignment 2a
+        if ($price < 20) {
+            $result .= " WholeSale !!";
+        } elseif ($price >= 20 && $price < 50) {
+            $discountedPrice = $price - ($price * 0.15); // 15% discount
+            $result .= " Super Sale!! (Discounted Price: " . number_format($discountedPrice, 2) . ")";
+        } elseif ($price >= 50) {
+            $result .= " Premium !!";
         }
+
         return $result;
     }
 }

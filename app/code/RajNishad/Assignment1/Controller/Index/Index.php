@@ -11,10 +11,10 @@ use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use RajNishad\Assignment1\Model\Test;
 use Psr\Log\LoggerInterface;
+use RajNishad\Assignment1\Logger\Logger;
 use Magento\Framework\Controller\ResultFactory; //It is a factory class
 //in Magento 2 used by controllers to generate response/result objects
 //(like HTML pages, JSON, redirects, raw output, etc.).
-use Magento\TestFramework\ErrorLog\Logger;
 
 class Index extends Action
 {
@@ -38,7 +38,7 @@ class Index extends Action
     public function __construct(
         Context $context,
         Test $testModel,
-        LoggerInterface $logger
+        Logger $logger
     ) {
         parent::__construct($context);
         $this->testModel = $testModel;

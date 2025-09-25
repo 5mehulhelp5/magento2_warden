@@ -1,48 +1,33 @@
 <?php
 
-/**
- * Copyright 2024 Adobe
- * All Rights Reserved.
- */
-
 namespace RajNishad\Assignment3\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Psr\Log\LoggerInterface;
 
-class HtmlLogger implements \Magento\Framework\Event\ObserverInterface
+class HtmlLogger implements ObserverInterface
 {
-    /**
-     * Logger instance
-     *
-     * @var LoggerInterface
-     */
-    protected $logger;
+    protected LoggerInterface $logger;
 
-    /**
-     * Constructor
-     *
-     * @param LoggerInterface $logger
-     */
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
-    /**
-     * Execute observer
-     *
-     * @param Observer $observer
-     * @return void
-     */
     public function execute(Observer $observer)
     {
-        $response = $observer->getEvent()->getResponse();
+        /** @var \Magento\Framework\App\Action\Action $controller */
+        $controller = $observer->getEvent()->getControllerAction();
+        $response = $controller->getResponse();
+
+        $this->logger->info("A page is loaded: " . $controller->getRequest()->getPathInfo());
+
         if ($response) {
             $html = $response->getBody();
-            $this->logger->info("Page HTML:\n" . substr($html, 0, 500));
-            // limit to 500 chars so system.log doesn’t explode
+            $this->logger->info("Page HTML (first 100 chars): " . substr($html, 0, 100));
+        } else {
+            $this->logger->info("No response object found.");
         }
     }
 }

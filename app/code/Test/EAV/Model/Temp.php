@@ -17,7 +17,6 @@ class Temp
     public function getAllProducts()
     {
         $collection = $this->productCollectionFactory->create();
-        $collection->addAttributeToSelect('*');
 
         return $collection;
     }

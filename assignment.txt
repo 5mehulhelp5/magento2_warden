@@ -1,0 +1,3 @@
+1a->new handling throw new error don't know why
+2a-> unavailable to apply sale image
+4-> i am listing the current route information in system.log file. not all the routers. also CamelCaseRouter causes issues when a non-camelcase url is accessed, leading to infinite redirects. I have added a check to prevent this loop.

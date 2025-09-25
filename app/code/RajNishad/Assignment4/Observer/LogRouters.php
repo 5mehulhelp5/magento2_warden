@@ -36,12 +36,14 @@ class LogRouters implements ObserverInterface
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        $this->logger->info('>>> LogRouters triggered!');
+        $controller = $observer->getEvent()->getControllerAction();
+        $request = $controller->getRequest();
 
-        $front = $observer->getEvent()->getFront();
-        $routers = $front->getRouters();
-        $routerNames = array_keys($routers);
+        $fullActionName = $request->getFullActionName();
+        $module = $request->getModuleName();
+        $controllerName = $request->getControllerName();
+        $action = $request->getActionName();
 
-        $this->logger->info('Available routers: ' . implode(', ', $routerNames));
+        $this->logger->info("Full action: $fullActionName | Module: $module | Controller: $controllerName | Action: $action");
     }
 }

@@ -13,6 +13,7 @@ grumphp:
         - /^app\/bootstrap\.php$/
         - /^app\/autoload\.php$/
         - /^app\/etc\//
+        - /^app\/code\//
         - /^app\/code\/Course2.*/
         - /^app\/code\/DependencyInjection/
         - /^app\/code\/MagentoBackendProjects/
