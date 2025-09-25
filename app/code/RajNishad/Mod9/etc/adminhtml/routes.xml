@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="admin">
-        <route id="assignment5" frontName="assignment5">
-            <module name="RajNishad_Assignment5" />
+    <router id="standard">
+        <route id="mod9" frontName="mod9">
+            <module name="RajNishad_Mod9" />
         </route>
     </router>
 </config>

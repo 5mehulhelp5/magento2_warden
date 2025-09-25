@@ -1,3 +1,11 @@
 1a->new handling throw new error don't know why
 2a-> unavailable to apply sale image
 4-> i am listing the current route information in system.log file. not all the routers. also CamelCaseRouter causes issues when a non-camelcase url is accessed, leading to infinite redirects. I have added a check to prevent this loop.
+8a->to use warden database(warden db connect). to see the latest rows we need cache:flush
+9->mod9
+10->skip
+11->skip
+12->skip
+13->warden installation
+14->to trigger the event edit the product in admin panel
+16->it mod9 dir

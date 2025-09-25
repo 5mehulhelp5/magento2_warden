@@ -1,6 +1,8 @@
-<form action="<?= $block->getUrl('assignment8/index/index') ?>" method="post">
-    <label>First Name: <input type="text" name="first_name" required></label><br>
-    <label>Last Name: <input type="text" name="last_name" required></label><br>
-    <label>Email: <input type="email" name="email_id" required></label><br>
-    <button type="submit">Save Employee</button>
+<form action="<?= $block->getFormAction() ?>" method="post">
+    <input type="text" name="first_name" placeholder="First Name" required maxlength="30" />
+    <input type="text" name="last_name" placeholder="Last Name" required maxlength="30" />
+    <input type="email" name="email_id" placeholder="Email" required />
+    <textarea name="address" placeholder="Address" required minlength="30"></textarea>
+    <input type="text" name="phone_number" placeholder="Phone Number" required pattern="\d{10}" />
+    <button type="submit">Save</button>
 </form>

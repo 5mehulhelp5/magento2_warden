@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <event name="sales_order_place_after">
+        <observer name="raj_assignment15_order_observer" instance="RajNishad\Assignment15\Observer\OrderPlaceAfter"/>
+    </event>
+
+    <event name="custom_order_placement">
+        <observer name="raj_assignment15_custom_event" instance="RajNishad\Assignment15\Observer\CustomOrderPlacement"/>
+    </event>
+
+</config>

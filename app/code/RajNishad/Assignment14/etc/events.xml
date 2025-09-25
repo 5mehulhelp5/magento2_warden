@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="raj_assignment14_low_stock">
+        <observer name="assignment14_low_stock_observer" instance="RajNishad\Assignment14\Observer\LowStockObserver"/>
+    </event>
+</config>

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Copyright 2024 Adobe
- * All Rights Reserved.
- */
-
 namespace RajNishad\Assignment8\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
@@ -14,13 +9,6 @@ use Magento\Framework\DB\Ddl\Table;
 
 class InstallSchema implements InstallSchemaInterface
 {
-    /**
-     * Installs tables in magento2 database, runs only once
-     *
-     * @param Magento\Framework\Setup\SchemaSetupInterface $setup
-     * @param Magento\Framework\Setup\ModuleContextInterface $context
-     * @return null
-     */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
@@ -39,14 +27,14 @@ class InstallSchema implements InstallSchemaInterface
                 ->addColumn(
                     'first_name',
                     Table::TYPE_TEXT,
-                    255,
+                    30,
                     ['nullable' => false],
                     'First Name'
                 )
                 ->addColumn(
                     'last_name',
                     Table::TYPE_TEXT,
-                    255,
+                    30,
                     ['nullable' => false],
                     'Last Name'
                 )
@@ -57,7 +45,22 @@ class InstallSchema implements InstallSchemaInterface
                     ['nullable' => false],
                     'Email ID'
                 )
+                ->addColumn(
+                    'address',
+                    Table::TYPE_TEXT,
+                    255,
+                    ['nullable' => false],
+                    'Address'
+                )
+                ->addColumn(
+                    'phone_number',
+                    Table::TYPE_TEXT,
+                    10,
+                    ['nullable' => false],
+                    'Phone Number'
+                )
                 ->setComment('Employee Table');
+
             $setup->getConnection()->createTable($table);
         }
 

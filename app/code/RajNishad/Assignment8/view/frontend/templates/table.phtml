@@ -1,21 +1,43 @@
 <?php
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$request = $objectManager->get(\Magento\Framework\App\RequestInterface::class);
+
+$sort = $request->getParam('sort') ?: 'employee_id';
+$order = $request->getParam('order') ?: 'ASC';
+
 $collection = $objectManager->create(\RajNishad\Assignment8\Model\ResourceModel\Employee\Collection::class);
+//echo $collection->getSelect()->__toString(); // Debug: Output the SQL query
+$collection->setOrder($sort, $order)->load(); // <--- Load the collection explicitly
+$collection->clear(); // <-- ensure Magento doesn’t cache old results
 ?>
 
 <table border="1" cellpadding="5" cellspacing="0">
     <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
+        <?php
+        $columns = [
+            'employee_id' => 'ID',
+            'first_name' => 'First Name',
+            'last_name' => 'Last Name',
+            'email_id' => 'Email',
+            'address' => 'Address',
+            'phone_number' => 'Phone'
+        ];
+
+        foreach ($columns as $field => $label) {
+            $newOrder = ($sort == $field && $order == 'ASC') ? 'DESC' : 'ASC';
+            echo "<th><a href='?sort={$field}&order={$newOrder}'>{$label}</a></th>";
+        }
+        ?>
     </tr>
+
     <?php foreach ($collection as $employee): ?>
         <tr>
-            <td><?= $employee->getId() ?></td>
+            <td><?= 'EMP' . $employee->getEmployeeId() ?></td> <!-- Add EMP prefix -->
             <td><?= $employee->getFirstName() ?></td>
             <td><?= $employee->getLastName() ?></td>
             <td><?= $employee->getEmailId() ?></td>
+            <td><?= $employee->getAddress() ?></td>
+            <td><?= $employee->getPhoneNumber() ?></td>
         </tr>
     <?php endforeach; ?>
 </table>

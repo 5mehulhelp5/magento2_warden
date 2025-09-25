@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Menu/etc/menu.xsd">
+    <menu>
+        <add id="RajNishad_Mod9::main_menu" title="Mod9 Menu" module="RajNishad_Mod9" sortOrder="100" resource="Magento_Backend::content"/>
+        <add id="RajNishad_Mod9::submenu_display" title="Display Text" module="RajNishad_Mod9" sortOrder="10" parent="RajNishad_Mod9::main_menu" action="mod9/index/display" resource="Magento_Backend::content"/>
+    </menu>
+</config>

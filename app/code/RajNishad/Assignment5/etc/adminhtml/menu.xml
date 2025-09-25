@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="RajNishad_Assignment5::custom" title="Custom Admin Page" module="RajNishad_Assignment5" sortOrder="10" parent="Magento_Backend::content" action="assignment5/custom/index" resource="RajNishad_Assignment5::custom"/>
+    </menu>
+</config>

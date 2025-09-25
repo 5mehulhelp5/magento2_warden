@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<email_templates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Mail/etc/email_templates.xsd">
+    <template id="low_stock_email_template" label="Low Stock Alert" file="low_stock_alert.html" type="html" module="RajNishad_Assignment14" area="adminhtml"/>
+</email_templates>

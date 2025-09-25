@@ -1,5 +1,5 @@
 {
-    "name": "rajnishad/assignment9",
+    "name": "rajnishad/assignment15",
     "description": "",
     "type": "magento2-module",
     "version": "1.0.0",
@@ -8,7 +8,7 @@
     ],
     "autoload": {
       "psr-4": {
-        "RajNishad\\Assignment9\\": ""
+        "RajNishad\\Assignment15\\": ""
       },
       "files": [
         "registration.php"
