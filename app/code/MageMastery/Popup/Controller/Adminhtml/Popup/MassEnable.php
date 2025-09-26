@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Copyright 2024 Adobe
- * All Rights Reserved.
- */
-
 declare(strict_types=1);
 
 namespace MageMastery\Popup\Controller\Adminhtml\Popup;
@@ -22,6 +17,7 @@ use Magento\Ui\Component\MassAction\Filter;
 class MassEnable extends Action
 {
     const ADMIN_RESOURCE = 'MageMastery_Popup::popup';
+
     public function __construct(
         Context $context,
         private readonly Filter $filter,
@@ -34,7 +30,7 @@ class MassEnable extends Action
     public function execute(): ResultInterface
     {
         try {
-            $collection = $this->filter->getCOllection($this->collectionFactory->create());
+            $collection = $this->filter->getCollection($this->collectionFactory->create());
             $collectionSize = $collection->getSize();
 
             /** @var Popup $popup */
@@ -45,11 +41,10 @@ class MassEnable extends Action
 
             $this->messageManager->addSuccessMessage(__('A total of %1 record(s) have been enabled', $collectionSize));
         } catch (\Throwable $exception) {
-            $this->messageManager->addErrorMessage('Something went wrong while processing th operation');
+            $this->messageManager->addErrorMessage('Something went wrong while processing the operation');
         }
 
         $result = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
-
-        return $result->setPath('MageMastery/popup/index');
+        return $result->setPath('*/*/');
     }
 }

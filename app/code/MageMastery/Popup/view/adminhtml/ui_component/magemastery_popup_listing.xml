@@ -65,21 +65,21 @@
                         <message translate="true">Are you sure you want to delete selected items?</message>
                         <title translate="true">Delete items</title>
                     </confirm>
-                    <url path="magemastery_popup/popup/massDelete"/>
+                    <url path="magemastery/popup/massDelete"/>
                     <type>delete</type>
                     <label translate="true">Delete</label>
                 </settings>
             </action>
             <action name="disable">
                 <settings>
-                    <url path="magemastery_popup/popup/massDisable"/>
+                    <url path="magemastery/popup/massDisable"/>
                     <type>disable</type>
                     <label translate="true">Disable</label>
                 </settings>
             </action>
             <action name="enable">
                 <settings>
-                    <url path="magemastery_popup/popup/massEnable"/>
+                    <url path="magemastery/popup/massEnable"/>
                     <type>enable</type>
                     <label translate="true">Enable</label>
                 </settings>

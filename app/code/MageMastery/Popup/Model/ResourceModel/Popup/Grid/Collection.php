@@ -22,6 +22,8 @@ class Collection extends PopupCollection implements SearchResultInterface
      */
     private TimezoneInterface $timeZone;
 
+    protected $_idFieldName = 'popup_id';
+
     /**
      * @var AggregationInterface
      */

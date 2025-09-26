@@ -13,6 +13,7 @@ use MageMastery\Popup\Api\Data\PopupInterface;
 use MageMastery\Popup\Api\PopupRepositoryInterface;
 use MageMastery\Popup\Model\Popup;
 use MageMastery\Popup\Model\ResourceModel\Popup\CollectionFactory;
+
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
@@ -21,7 +22,11 @@ use Magento\Ui\Component\MassAction\Filter;
 
 class MassDisable extends Action
 {
+
     const ADMIN_RESOURCE = 'MageMastery_Popup::popup';
+
+    public \Psr\Log\LoggerInterface $logger;
+
     /**
      * @param Context $context
      * @param Filter $filter
@@ -32,9 +37,11 @@ class MassDisable extends Action
         Context $context,
         private readonly Filter $filter,
         private readonly CollectionFactory $collectionFactory,
-        private readonly PopupRepositoryInterface $popupRepository
+        private readonly PopupRepositoryInterface $popupRepository,
+        \Psr\Log\LoggerInterface $logger
     ) {
         parent::__construct($context);
+        $this->logger = $logger;
     }
 
     /**
@@ -44,6 +51,8 @@ class MassDisable extends Action
     {
         try {
             $collection = $this->filter->getCollection($this->collectionFactory->create());
+            $ids = $collection->getAllIds();
+            $this->logger->info('Selected IDs: ' . implode(', ', $ids));
             $collectionSize = $collection->getSize();
 
             /** @var Popup $popup */
@@ -59,6 +68,6 @@ class MassDisable extends Action
 
         $result = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
 
-        return $result->setPath('MageMastery/popup/index');
+        return $result->setPath('*/*/');
     }
 }

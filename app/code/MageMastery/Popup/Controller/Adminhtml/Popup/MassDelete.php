@@ -58,6 +58,6 @@ class MassDelete extends Action
 
         $result = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
 
-        return $result->setPath('MageMastery/popup/index');
+        return $result->setPath('*/*/');
     }
 }

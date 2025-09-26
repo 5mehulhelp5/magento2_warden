@@ -23,7 +23,7 @@ class Index extends Action
         $page = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
 
         $page->setActiveMenu('MageMastery_Popup::popup');
-        $page->addBreadcrumb(__('Popups'), __('Popups'));
+        $page->addBreadcrumb(__('Popups index index'), __('Popups'));
         $page->addBreadcrumb(__('Menage Popups'), __('Menage Popups'));
         $page->getConfig()->getTitle()->prepend(__('Popups'));
 

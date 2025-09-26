@@ -2,62 +2,52 @@
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">MageMastery_form.MageMastery_form_data_source</item>
+            <item name="provider" xsi:type="string">magemastery_popup_form.magemastery_popup_form_data_source</item>
         </item>
         <item name="label" xsi:type="string" translate="true">General Information</item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
+
     <settings>
         <buttons>
             <button name="save" class="MageMastery\Popup\Block\Adminhtml\Popup\Edit\SaveButton"/>
             <button name="delete" class="MageMastery\Popup\Block\Adminhtml\Popup\Edit\DeleteButton"/>
             <button name="back" class="MageMastery\Popup\Block\Adminhtml\Popup\Edit\BackButton"/>
         </buttons>
-        <namespace>MageMastery_form</namespace>
+        <namespace>magemastery_popup_form</namespace>
         <dataScope>data</dataScope>
         <deps>
-            <dep>MageMastery_form.MageMastery_form_data_source</dep>
+            <dep>magemastery_popup_form.magemastery_popup_form_data_source</dep>
         </deps>
     </settings>
-    <dataSource name="MageMastery_form_data_source">
+
+    <dataSource name="magemastery_popup_form_data_source">
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
         <settings>
-            <submitUrl path="MageMastery/popup/save"/>
+            <submitUrl path="magemastery/popup/save"/>
         </settings>
-        <dataProvider class="MageMastery\Popup\Ui\Popup\DataProvider" name="MageMastery_form_data_source">
+        <dataProvider class="MageMastery\Popup\Ui\Popup\DataProvider" name="magemastery_popup_form_data_source">
             <settings>
                 <requestFieldName>popup_id</requestFieldName>
                 <primaryFieldName>popup_id</primaryFieldName>
             </settings>
         </dataProvider>
     </dataSource>
+
     <fieldset name="general">
-        <settings>
-            <label/>
-        </settings>
         <field name="popup_id" formElement="input">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">popup</item>
-                </item>
-            </argument>
             <settings>
                 <dataType>text</dataType>
                 <visible>false</visible>
                 <dataScope>popup_id</dataScope>
             </settings>
         </field>
-        <field name="is_active" sortOrder="10" formElement="checkbox">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">popup</item>
-                    <item name="default" xsi:type="number">1</item>
-                </item>
-            </argument>
+
+        <field name="is_active" sortOrder="1000" formElement="checkbox">
             <settings>
                 <dataType>boolean</dataType>
                 <label translate="true">Enable Popup</label>
@@ -75,12 +65,8 @@
                 </checkbox>
             </formElements>
         </field>
-        <field name="name" sortOrder="20" formElement="input">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">popup</item>
-                </item>
-            </argument>
+
+        <field name="name" sortOrder="2000" formElement="input">
             <settings>
                 <validation>
                     <rule name="required-entry" xsi:type="boolean">true</rule>
@@ -90,12 +76,8 @@
                 <dataScope>name</dataScope>
             </settings>
         </field>
-        <field name="timeout" sortOrder="30" formElement="input">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">popup</item>
-                </item>
-            </argument>
+
+        <field name="timeout" sortOrder="3000" formElement="input">
             <settings>
                 <validation>
                     <rule name="required-entry" xsi:type="boolean">true</rule>
@@ -105,17 +87,13 @@
                 <dataScope>timeout</dataScope>
             </settings>
         </field>
+
         <field name="content" sortOrder="40" formElement="wysiwyg">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">popup</item>
-                </item>
-            </argument>
             <settings>
                 <additionalClasses>
                     <class name="admin__field-wide">true</class>
                 </additionalClasses>
-                <label/>
+                <label translate="true">Popup Content</label>
                 <dataScope>content</dataScope>
             </settings>
             <formElements>

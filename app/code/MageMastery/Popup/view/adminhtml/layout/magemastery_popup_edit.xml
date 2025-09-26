@@ -2,8 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <!-- this is comming from /home/rajnishad/Desktop/magento/app/code/MageMastery/Popup/view/adminhtml/ui_component/magemastery_popup_listing.xml -->
-            <uiComponent name="magemastery_popup_listing"/>
+            <uiComponent name="magemastery_popup_form"/>
         </referenceContainer>
     </body>
 </page>
