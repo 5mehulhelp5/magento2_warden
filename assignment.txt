@@ -9,3 +9,6 @@
 13->warden installation
 14->to trigger the event edit the product in admin panel
 16->it mod9 dir
+17->ratingFilter dir
+23->checkout dir
+25->magictoolbox
