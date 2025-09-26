@@ -4,6 +4,7 @@
  * Magic 360 view block
  *
  */
+
 namespace MagicToolbox\Magic360\Block\Product\View;
 
 use Magento\Framework\Data\Collection;
@@ -410,12 +411,12 @@ class Gallery extends \Magento\Catalog\Block\Product\View\Gallery
                         ]
                     )->getRenderedHtml($id);
                 } else {
-                    $this->renderedGalleryHtml[$id] = '<div class="MagicToolboxContainer"'.$this->getThumbSwitcherInitAttribute().'>'.$this->renderedGalleryHtml[$id].'</div>';
+                    $this->renderedGalleryHtml[$id] = '<div class="MagicToolboxContainer"' . $this->getThumbSwitcherInitAttribute() . '>' . $this->renderedGalleryHtml[$id] . '</div>';
                 }
                 return $this;
             }
 
-            $this->renderedGalleryHtml[$id] = '<div class="MagicToolboxContainer">'.$this->renderedGalleryHtml[$id].'</div>';
+            $this->renderedGalleryHtml[$id] = '<div class="MagicToolboxContainer">' . $this->renderedGalleryHtml[$id] . '</div>';
 
             //NOTE: check for the case where some module removes the original block, replacing it with its own
             if ($originalBlock) {
@@ -496,7 +497,7 @@ class Gallery extends \Magento\Catalog\Block\Product\View\Gallery
             }
 
             $html[$id] = $this->toolObj->getMainTemplate($magic360Data, ['id' => "Magic360-product-{$id}"]);
-            $html[$id] = '<div class="MagicToolboxContainer">'.$html[$id].'</div>';
+            $html[$id] = '<div class="MagicToolboxContainer">' . $html[$id] . '</div>';
         }
 
         return $html[$id];
@@ -547,10 +548,10 @@ class Gallery extends \Magento\Catalog\Block\Product\View\Gallery
                 }
                 $id = $product->getId();
                 $magic360Slide = [
-                    'magic360' => 'Magic360-product-'.$id,
+                    'magic360' => 'Magic360-product-' . $id,
                     'thumb' => $magic360Icon,
                     'img' => $magic360Icon,
-                    'html' => '<div class="fotorama__select">'.$this->renderedGalleryHtml[$id].'</div>',
+                    'html' => '<div class="fotorama__select">' . $this->renderedGalleryHtml[$id] . '</div>',
                     'caption' => '',
                     'position' => $this->spinPosition,
                     'isMain' => true,
@@ -621,13 +622,13 @@ class Gallery extends \Magento\Catalog\Block\Product\View\Gallery
             $hash = hash('sha256', $icon);
             $model = $this->magic360ImageHelper->getModel();
             $mediaDirectory = $model->getMediaDirectory();
-            if ($mediaDirectory->isFile('magic360/icon/'.$hash.'/360icon.jpg')) {
-                $path = 'icon/'.$hash.'/360icon.jpg';
+            if ($mediaDirectory->isFile('magic360/icon/' . $hash . '/360icon.jpg')) {
+                $path = 'icon/' . $hash . '/360icon.jpg';
             } else {
                 $rootDirectory = $model->getRootDirectory();
                 if ($rootDirectory->isFile($icon)) {
-                    $rootDirectory->copyFile($icon, 'magic360/icon/'.$hash.'/360icon.jpg', $mediaDirectory);
-                    $path = 'icon/'.$hash.'/360icon.jpg';
+                    $rootDirectory->copyFile($icon, 'magic360/icon/' . $hash . '/360icon.jpg', $mediaDirectory);
+                    $path = 'icon/' . $hash . '/360icon.jpg';
                 } else {
                     $path = '';
                 }

@@ -28,4 +28,8 @@
     <type name="Magento\ProductVideo\Block\Product\View\Gallery">
         <plugin name="Magic360ProductViewVideoGalleryPlugin" type="MagicToolbox\Magic360\Plugin\Product\View\VideoGallery" sortOrder="1000" />
     </type>
+
+    <type name="MagicToolbox\Magic360\Block\Product\View\Gallery">
+        <plugin name="replace_magic360_icon" type="MagicToolbox\Magic360\Plugin\ReplaceMagic360Icon" sortOrder="999999"/>
+    </type>
 </config>
